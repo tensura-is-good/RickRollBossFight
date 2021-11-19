@@ -25,7 +25,7 @@ Player.prototype.checkCollision = function(threats) {
         state.gameLose();
       }
     } else if (threat.type == "Laser" && threat.charge <= -10) {
-      if (threat.start[0] !== threat.end[0]) {
+      if (threat.start[0] !== threat.[0]) {
         let slope = (threat.start[1] - threat.end[1])/(threat.start[0] - threat.end[0]);
         let yIntercept = (-1 * (threat.start[0]) * slope) + threat.start[1];
         let yTest = (slope * this.x + yIntercept)
@@ -224,7 +224,7 @@ State.prototype.gameWin = function() {
     document.getElementById("rick").width = Math.floor((1 - gameWinProgress/255)*181);
     document.getElementById("rick").height = Math.floor((1 - gameWinProgress/255)*190);
   } else {
-    window.location.href="/end.html";
+    window.location.href="./end.html";
   }
 }
 
